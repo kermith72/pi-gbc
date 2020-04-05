@@ -1,0 +1,732 @@
+' Gambas class file
+
+Library "/usr/lib/libwiringPi"
+
+Public Extern wiringPiSetup() As Integer
+
+Public Extern pinMode(pin As Integer, pud As Integer)
+
+Public Extern pullUpDnControl(pin As Integer, mode As Integer)
+
+Public Extern digitalRead(pin As Integer) As Integer
+
+Public Extern digitalWrite(pin As Integer, value As Integer)
+
+Public Const PIN_INPUT As Integer = 0
+Public Const PIN_OUTPUT As Integer = 1
+
+Public Const PIN_LOW As Integer = 0
+Public Const PIN_HIGH As Integer = 1
+
+Public ChoixPin As Integer = 1
+Public DureeTempo As Integer = 5
+
+Public Sub Form_Open()
+
+      wiringPiSetup()
+      LireGpio
+Catch
+     Me.text = "WiringPi setup failed - run as root?"
+
+End
+
+Public Sub CmdPin_Click()
+
+ ChoixPin = 1
+ ChangePin
+  
+End
+
+Public Sub ColorButton1_Click()
+
+  
+
+End
+
+Public Sub Timer1_Timer()
+  ColorTempo.Color = Color.Red
+  Timer2.Enabled = True
+  LireGpio
+End
+Public Sub ChangePin()
+  
+  Select Case ChoixPin
+    Case 1
+      LblPin1.Text = "1"
+      LblPin2.Text = "2"
+      LblPin3.Text = "3"
+      LblPin4.Text = "4"
+      LblPin5.Text = "5"
+      LblPin6.Text = "6"
+      LblPin7.Text = "7"
+      LblPin8.Text = "8"
+      LblPin9.Text = "9"
+      LblPin10.Text = "10"
+      LblPin11.Text = "11"
+      LblPin12.Text = "12"
+      LblPin13.Text = "13"
+      LblPin14.Text = "14"
+      LblPin15.Text = "15"
+      LblPin16.Text = "16"
+      LblPin17.Text = "17"
+      LblPin18.Text = "18"
+      LblPin19.Text = "19"
+      LblPin20.Text = "20"
+      LblPin21.Text = "21"
+      LblPin22.Text = "22"
+      LblPin23.Text = "23"
+      LblPin24.Text = "24"
+      LblPin25.Text = "25"
+      LblPin26.Text = "26"
+      LblPin27.Text = "27"
+      LblPin28.Text = "28"
+      LblPin29.Text = "29"
+      LblPin30.Text = "30"
+      LblPin31.Text = "31"
+      LblPin32.Text = "32"
+      LblPin33.Text = "33"
+      LblPin34.Text = "34"
+      LblPin35.Text = "35"
+      LblPin36.Text = "36"
+      LblPin37.Text = "37"
+      LblPin38.Text = "38"
+      LblPin39.Text = "39"
+      LblPin40.Text = "40"
+    Case 2
+      LblPin1.Text = ""
+      LblPin2.Text = ""
+      LblPin3.Text = "2"
+      LblPin4.Text = ""
+      LblPin5.Text = "3"
+      LblPin6.Text = ""
+      LblPin7.Text = "4"
+      LblPin8.Text = "14"
+      LblPin9.Text = ""
+      LblPin10.Text = "15"
+      LblPin11.Text = "17"
+      LblPin12.Text = "18"
+      LblPin13.Text = "27"
+      LblPin14.Text = ""
+      LblPin15.Text = "22"
+      LblPin16.Text = "23"
+      LblPin17.Text = ""
+      LblPin18.Text = "24"
+      LblPin19.Text = "10"
+      LblPin20.Text = ""
+      LblPin21.Text = "9"
+      LblPin22.Text = "25"
+      LblPin23.Text = "11"
+      LblPin24.Text = "8"
+      LblPin25.Text = ""
+      LblPin26.Text = "7"
+      LblPin27.Text = "0"
+      LblPin28.Text = "1"
+      LblPin29.Text = "5"
+      LblPin30.Text = ""
+      LblPin31.Text = "6"
+      LblPin32.Text = "12"
+      LblPin33.Text = "13"
+      LblPin34.Text = ""
+      LblPin35.Text = "19"
+      LblPin36.Text = "16"
+      LblPin37.Text = "26"
+      LblPin38.Text = "20"
+      LblPin39.Text = ""
+      LblPin40.Text = "21"
+    Case 3
+      LblPin1.Text = ""
+      LblPin2.Text = ""
+      LblPin3.Text = "8"
+      LblPin4.Text = ""
+      LblPin5.Text = "9"
+      LblPin6.Text = ""
+      LblPin7.Text = "7"
+      LblPin8.Text = "15"
+      LblPin9.Text = ""
+      LblPin10.Text = "16"
+      LblPin11.Text = "0"
+      LblPin12.Text = "1"
+      LblPin13.Text = "2"
+      LblPin14.Text = ""
+      LblPin15.Text = "3"
+      LblPin16.Text = "4"
+      LblPin17.Text = ""
+      LblPin18.Text = "5"
+      LblPin19.Text = "12"
+      LblPin20.Text = ""
+      LblPin21.Text = "13"
+      LblPin22.Text = "6"
+      LblPin23.Text = "14"
+      LblPin24.Text = "10"
+      LblPin25.Text = ""
+      LblPin26.Text = "11"
+      LblPin27.Text = "30"
+      LblPin28.Text = "31"
+      LblPin29.Text = "21"
+      LblPin30.Text = ""
+      LblPin31.Text = "22"
+      LblPin32.Text = "26"
+      LblPin33.Text = "23"
+      LblPin34.Text = ""
+      LblPin35.Text = "24"
+      LblPin36.Text = "27"
+      LblPin37.Text = "25"
+      LblPin38.Text = "28"
+      LblPin39.Text = ""
+      LblPin40.Text = "29"
+  End Select
+  
+End
+
+
+Public Sub LireGpio()
+   Dim result As String
+ 
+   'pin 3
+   ValueBox3.Text = digitalRead(8)
+   Shell "/home/pi/statusgpiomode.sh 2" To result
+   LblMode3.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode3.Text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode3.Text = "<--"
+     LblMode3.Foreground = Color.Red
+   Else 
+      LblMode3.Text = "<->" 
+   Endif
+   If ValueBox3.Text = 0 Then
+     ValueBox3.Background = Color.Violet
+     Else
+       ValueBox3.Background = Color.Green
+   Endif
+   'pin 5
+   ValueBox5.Text = digitalRead(9)
+   Shell "/home/pi/statusgpiomode.sh 3" To result
+   LblMode5.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode5.text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode5.Text = "<--"
+     LblMode5.Foreground = Color.Red
+   Else 
+      LblMode5.Text = "<->" 
+   Endif
+    If ValueBox5.Text = 0 Then
+     ValueBox5.Background = Color.Violet
+     Else
+       ValueBox5.Background = Color.Green
+   Endif 
+   'pin 7
+   ValueBox7.Text = digitalRead(7)
+      Shell "/home/pi/statusgpiomode.sh 4" To result   
+   LblMode7.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode7.Text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode7.Text = "<--"
+     LblMode7.Foreground = Color.Red
+   Else 
+      LblMode7.Text = "<->" 
+   Endif
+   If ValueBox7.Text = 0 Then
+     ValueBox7.Background = Color.Violet
+     Else
+       ValueBox7.Background = Color.Green
+   Endif 
+   'pin 8
+   Shell "/home/pi/statusgpiomode.sh 14" To result   
+   LblMode8.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode8.Text = "<--"
+   Else If result = "OUT\n" Then
+     LblMode8.Text = "-->"
+     LblMode8.Foreground = Color.Red
+   Else 
+      LblMode8.Text = "<->" 
+   Endif
+
+   ValueBox8.Text = digitalRead(15)
+   If ValueBox8.Text = 0 Then
+     ValueBox8.Background = Color.Violet
+     Else
+       ValueBox8.Background = Color.Green
+   Endif 
+   'pin 10 
+   Shell "/home/pi/statusgpiomode.sh 15" To result
+      LblMode10.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode10.Text = "<--"
+   Else If result = "OUT\n" Then
+     LblMode10.Text = "-->"
+     LblMode10.Foreground = Color.Red
+   Else 
+      LblMode10.Text = "<->" 
+   Endif
+
+   ValueBox10.Text = digitalRead(16)
+   If ValueBox10.Text = 0 Then
+     ValueBox10.Background = Color.Violet
+     Else
+       ValueBox10.Background = Color.Green
+   Endif 
+   'pin 11
+   ValueBox11.Text = digitalRead(0)
+      Shell "/home/pi/statusgpiomode.sh 17" To result
+   LblMode11.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode11.Text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode11.Text = "<--"
+     LblMode11.Foreground = Color.Red
+   Else 
+      LblMode11.Text = "<->" 
+   Endif
+   If ValueBox11.Text = 0 Then
+     ValueBox11.Background = Color.Violet
+     Else
+       ValueBox11.Background = Color.Green
+   Endif 
+   'pin 12
+   Shell "/home/pi/statusgpiomode.sh 18" To result   
+   LblMode12.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode12.Text = "<--"
+   Else If result = "OUT\n" Then
+     LblMode12.Text = "-->"
+     LblMode12.Foreground = Color.Red
+   Else 
+      LblMode12.Text = "<->" 
+   Endif
+
+   ValueBox12.Text = digitalRead(1)
+   If ValueBox12.Text = 0 Then
+     ValueBox12.Background = Color.Violet
+     Else
+       ValueBox12.Background = Color.Green
+   Endif 
+   'pin 13
+   ValueBox13.Text = digitalRead(2)
+      Shell "/home/pi/statusgpiomode.sh 27" To result
+   LblMode13.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode13.Text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode13.Text = "<--"
+     LblMode13.Foreground = Color.Red
+   Else 
+      LblMode13.Text = "<->" 
+   Endif
+   If ValueBox13.Text = 0 Then
+     ValueBox13.Background = Color.Violet
+     Else
+       ValueBox13.Background = Color.Green
+   Endif 
+   'pin 15
+   ValueBox15.Text = digitalRead(3)
+   Shell "/home/pi/statusgpiomode.sh 22" To result
+   LblMode15.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode15.Text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode15.Text = "<--"
+     LblMode15.Foreground = Color.Red
+   Else 
+      LblMode15.Text = "<->" 
+   Endif
+   If ValueBox15.Text = 0 Then
+     ValueBox15.Background = Color.Violet
+     Else
+       ValueBox15.Background = Color.Green
+   Endif 
+   ' pin 16
+   Shell "/home/pi/statusgpiomode.sh 23" To result   
+   LblMode16.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode16.Text = "<--"
+   Else If result = "OUT\n" Then
+     LblMode16.Text = "-->"
+     LblMode16.Foreground = Color.Red
+   Else 
+      LblMode16.Text = "<->" 
+   Endif
+
+   ValueBox16.Text = digitalRead(4)
+   If ValueBox16.Text = 0 Then
+     ValueBox16.Background = Color.Violet
+     Else
+       ValueBox16.Background = Color.Green
+   Endif 
+   ' pin 18
+   Shell "/home/pi/statusgpiomode.sh 24" To result   
+   LblMode18.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode18.Text = "<--"
+   Else If result = "OUT\n" Then
+     LblMode18.Text = "-->"
+     LblMode18.Foreground = Color.Red
+   Else 
+      LblMode18.Text = "<->" 
+   Endif
+
+   ValueBox18.Text = digitalRead(5)
+   If ValueBox18.Text = 0 Then
+     ValueBox18.Background = Color.Violet
+     Else
+       ValueBox18.Background = Color.Green
+   Endif 
+   'pin 19
+   ValueBox19.Text = digitalRead(12)
+      Shell "/home/pi/statusgpiomode.sh 10" To result
+   LblMode19.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode19.Text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode19.Text = "<--"
+     LblMode19.Foreground = Color.Red
+   Else 
+      LblMode19.Text = "<->" 
+   Endif
+   If ValueBox19.Text = 0 Then
+     ValueBox19.Background = Color.Violet
+     Else
+       ValueBox19.Background = Color.Green
+   Endif 
+   'pin 21
+   ValueBox21.Text = digitalRead(13)
+   
+   Shell "/home/pi/statusgpiomode.sh 9" To result
+   LblMode21.Foreground = Color.Black
+   If result = "IN\n" Then
+      LblMode21.text = "-->"
+   Else If result = "OUT\n" Then
+      LblMode21.text = "<--"
+      LblMode21.Foreground = Color.Red
+   Else 
+      LblMode21.text = "<->"
+   Endif
+   If ValueBox21.Text = 0 Then
+     ValueBox21.Background = Color.Violet
+     Else
+       ValueBox21.Background = Color.Green
+   Endif 
+   'pin 22
+   Shell "/home/pi/statusgpiomode.sh 25" To result
+   LblMode22.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode22.Text = "<--"
+   Else If result = "OUT\n" Then
+     LblMode22.Text = "-->"
+     LblMode22.Foreground = Color.Red
+   Else 
+      LblMode22.Text = "<->" 
+   Endif
+
+   ValueBox22.Text = digitalRead(6)
+   If ValueBox22.Text = 0 Then
+     ValueBox22.Background = Color.Violet
+     Else
+       ValueBox22.Background = Color.Green
+   Endif 
+   'pin 23
+   ValueBox23.Text = digitalRead(14)
+      Shell "/home/pi/statusgpiomode.sh 11" To result
+   LblMode23.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode23.Text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode23.Text = "<--"
+     LblMode23.Foreground = Color.Red
+   Else 
+      LblMode23.Text = "<->" 
+   Endif
+   If ValueBox23.Text = 0 Then
+     ValueBox23.Background = Color.Violet
+     Else
+       ValueBox23.Background = Color.Green
+   Endif 
+   'pin 24
+   Shell "/home/pi/statusgpiomode.sh 8" To result   
+   LblMode24.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode24.Text = "<--"
+   Else If result = "OUT\n" Then
+     LblMode24.Foreground = Color.Red
+     LblMode24.Text = "-->"
+   Else 
+      LblMode24.Text = "<->" 
+   Endif
+
+   ValueBox24.Text = digitalRead(10)
+   If ValueBox24.Text = 0 Then
+     ValueBox24.Background = Color.Violet
+     Else
+       ValueBox24.Background = Color.Green
+   Endif 
+   ' pin 26
+   Shell "/home/pi/statusgpiomode.sh 7" To result   
+   LblMode26.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode26.Text = "<--"
+   Else If result = "OUT\n" Then
+     LblMode26.Text = "-->"
+     LblMode26.Foreground = Color.Red
+   Else 
+      LblMode26.Text = "<->" 
+   Endif
+
+   ValueBox26.Text = digitalRead(11)
+   If ValueBox26.Text = 0 Then
+     ValueBox26.Background = Color.Violet
+     Else
+       ValueBox26.Background = Color.Green
+   Endif 
+   'pin 27
+   ValueBox27.Text = digitalRead(30)
+      Shell "/home/pi/statusgpiomode.sh 0" To result
+   LblMode27.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode27.Text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode27.Text = "<--"
+     LblMode27.Foreground = Color.Red
+   Else 
+      LblMode27.Text = "<->" 
+   Endif
+   If ValueBox27.Text = 0 Then
+     ValueBox27.Background = Color.Violet
+     Else
+       ValueBox27.Background = Color.Green
+   Endif 
+   ' pin 28
+   Shell "/home/pi/statusgpiomode.sh 1" To result   
+   LblMode28.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode28.Text = "<--"
+   Else If result = "OUT\n" Then
+     LblMode28.Text = "-->"
+     LblMode28.Foreground = Color.Red
+   Else 
+      LblMode28.Text = "<->" 
+   Endif
+
+   ValueBox28.Text = digitalRead(31)
+   If ValueBox28.Text = 0 Then
+     ValueBox28.Background = Color.Violet
+     Else
+       ValueBox28.Background = Color.Green
+   Endif
+   ' pin 29 
+   ValueBox29.Text = digitalRead(21)
+      Shell "/home/pi/statusgpiomode.sh 5" To result
+   LblMode29.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode29.Text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode29.Text = "<--"
+     LblMode29.Foreground = Color.Red
+   Else 
+      LblMode29.Text = "<->" 
+   Endif
+   If ValueBox29.Text = 0 Then
+     ValueBox29.Background = Color.Violet
+     Else
+       ValueBox29.Background = Color.Green
+   Endif 
+   ' pin 31
+   ValueBox31.Text = digitalRead(22)
+      Shell "/home/pi/statusgpiomode.sh 6" To result
+   LblMode31.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode31.Text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode31.Text = "<--"
+     LblMode31.Foreground = Color.Red
+   Else 
+      LblMode31.Text = "<->" 
+   Endif
+   If ValueBox31.Text = 0 Then
+     ValueBox31.Background = Color.Violet
+     Else
+       ValueBox31.Background = Color.Green
+   Endif 
+   ' pin 32
+   Shell "/home/pi/statusgpiomode.sh 12" To result   
+   LblMode32.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode32.Text = "<--"
+   Else If result = "OUT\n" Then
+     LblMode32.Text = "-->"
+     LblMode32.Foreground = Color.Red
+   Else 
+      LblMode32.Text = "<->" 
+   Endif
+
+   ValueBox32.Text = digitalRead(26)
+   If ValueBox32.Text = 0 Then
+     ValueBox32.Background = Color.Violet
+     Else
+       ValueBox32.Background = Color.Green
+   Endif 
+   ' pin 33
+   ValueBox33.Text = digitalRead(23)
+      Shell "/home/pi/statusgpiomode.sh 13" To result
+   LblMode33.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode33.Text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode33.Foreground = Color.Red
+     LblMode33.Text = "<--"
+   Else 
+      LblMode33.Text = "<->" 
+   Endif
+   If ValueBox33.Text = 0 Then
+     ValueBox33.Background = Color.Violet
+     Else
+       ValueBox33.Background = Color.Green
+   Endif 
+   ' pin 35
+   ValueBox35.Text = digitalRead(24)
+      Shell "/home/pi/statusgpiomode.sh 19" To result
+   LblMode35.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode35.Text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode35.Text = "<--"
+     LblMode35.Foreground = Color.Red
+   Else 
+      LblMode35.Text = "<->" 
+   Endif
+   If ValueBox35.Text = 0 Then
+     ValueBox35.Background = Color.Violet
+     Else
+       ValueBox35.Background = Color.Green
+   Endif 
+   ' pin 36
+   Shell "/home/pi/statusgpiomode.sh 16" To result   
+   LblMode36.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode36.Text = "<--"
+   Else If result = "OUT\n" Then
+     LblMode36.Text = "-->"
+     LblMode36.Foreground = Color.Red
+   Else 
+      LblMode36.Text = "<->" 
+   Endif
+
+   ValueBox36.Text = digitalRead(27)
+   If ValueBox36.Text = 0 Then
+     ValueBox36.Background = Color.Violet
+     Else
+       ValueBox36.Background = Color.Green
+   Endif 
+   ' pin 37
+   ValueBox37.Text = digitalRead(25)
+      Shell "/home/pi/statusgpiomode.sh 26" To result
+   LblMode37.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode37.Text = "-->"
+   Else If result = "OUT\n" Then
+     LblMode37.Foreground = Color.Red
+     LblMode37.Text = "<--"
+   Else 
+      LblMode37.Text = "<->" 
+   Endif
+   If ValueBox37.Text = 0 Then
+     ValueBox37.Background = Color.Violet
+     Else
+       ValueBox37.Background = Color.Green
+   Endif 
+   ' pin 38
+   Shell "/home/pi/statusgpiomode.sh 20" To result   
+   LblMode38.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode38.Text = "<--"
+   Else If result = "OUT\n" Then
+     LblMode38.Foreground = Color.Red
+     LblMode38.Text = "-->"
+   Else 
+      LblMode38.Text = "<->" 
+   Endif
+
+   ValueBox38.Text = digitalRead(28)
+   If ValueBox38.Text = 0 Then
+     ValueBox38.Background = Color.Violet
+     Else
+       ValueBox38.Background = Color.Green
+   Endif 
+   ' pin 40
+   Shell "/home/pi/statusgpiomode.sh 21" To result   
+   LblMode40.Foreground = Color.Black
+   If result = "IN\n" Then
+     LblMode40.Text = "<--"
+   Else If result = "OUT\n" Then
+     LblMode40.Foreground = Color.Red
+     LblMode40.Text = "-->"
+   Else 
+      LblMode40.Text = "<->" 
+   Endif
+
+   ValueBox40.Text = digitalRead(29)
+   If ValueBox40.Text = 0 Then
+     ValueBox40.Background = Color.Violet
+     Else
+       ValueBox40.Background = Color.Green
+   Endif   
+End
+
+
+Public Sub Button2_Click()
+
+
+End
+
+Public Sub Label4_MouseDown()
+
+  
+
+End
+
+Public Sub Label3_MouseDown()
+
+  
+
+End
+
+Public Sub CmdBcm_Click()
+
+  ChoixPin = 2
+  ChangePin
+
+End
+
+Public Sub CmdwPi_Click()
+
+  ChoixPin = 3
+  ChangePin
+
+End
+
+Public Sub CmdClose_Click()
+
+  Quit
+
+End
+
+Public Sub Slider1_Change()
+
+  Timer1.Delay = Slider1.Value * 1000
+
+End
+
+Public Sub LblPin42_MouseDown()
+
+  
+
+End
+
+Public Sub Timer2_Timer()
+
+    ColorTempo.Color = Color.White
+    Timer2.Enabled = False
+
+End

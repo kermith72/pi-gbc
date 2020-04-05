@@ -1,0 +1,22 @@
+# Gambas Project File 3.0
+Title=Gpio PI 4 version 0.0.1
+Startup=FMain
+Version=0.0.1
+Component=gb.image
+Component=gb.gui
+Component=gb.form
+Description="Lecture des GPIO du raspberry PI 4. La bibilothèque winringpi est requise"
+Authors="kermith72"
+TabSize=2
+Language=fr
+Maintainer=Kermith72
+Vendor=kermith72
+Address=eric.coquard@sugarbug.fr
+Url=www.sugarbug.fr
+License=General Public License
+PackageName=testgpio-0.0.1
+Packager=1
+Systems=debian
+Menus=debian:"Applications/Programming"
+Categories=debian:"Electronics"
+Groups=debian:"electronics"

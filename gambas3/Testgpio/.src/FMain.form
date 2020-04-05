@@ -1,0 +1,652 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,48,67)
+  { ColorButton1 ColorButton
+    MoveScaled(20,3,3,3)
+    Value = Color.Orange
+  }
+  { ValueBox3 ValueBox
+    MoveScaled(20,6,3,3)
+    Font = Font["Bold"]
+    Background = Color.Violet
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox5 ValueBox
+    MoveScaled(20,9,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox7 ValueBox
+    MoveScaled(20,12,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox27 ValueBox
+    MoveScaled(20,42,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox11 ValueBox
+    MoveScaled(20,18,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox13 ValueBox
+    MoveScaled(20,21,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox15 ValueBox
+    MoveScaled(20,24,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox29 ValueBox
+    MoveScaled(20,45,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox19 ValueBox
+    MoveScaled(20,30,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox21 ValueBox
+    MoveScaled(20,33,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox23 ValueBox
+    MoveScaled(20,36,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox31 ValueBox
+    MoveScaled(20,48,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ColorButton2 ColorButton
+    MoveScaled(20,15,3,3)
+    Value = Color.Black
+  }
+  { ColorButton3 ColorButton
+    MoveScaled(20,27,3,3)
+    Value = Color.Orange
+  }
+  { ColorButton4 ColorButton
+    MoveScaled(20,39,3,3)
+    Value = Color.Black
+  }
+  { ValueBox33 ValueBox
+    MoveScaled(20,51,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox35 ValueBox
+    MoveScaled(20,54,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox37 ValueBox
+    MoveScaled(20,57,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ColorButton5 ColorButton
+    MoveScaled(20,60,3,3)
+    Value = Color.Black
+  }
+  { ColorButton6 ColorButton
+    MoveScaled(23,3,3,3)
+    Value = Color.Red
+  }
+  { ColorButton7 ColorButton
+    MoveScaled(23,6,3,3)
+    Value = Color.Red
+  }
+  { ColorButton8 ColorButton
+    MoveScaled(23,9,3,3)
+    Value = Color.Black
+  }
+  { ColorButton9 ColorButton
+    MoveScaled(23,21,3,3)
+    Value = Color.Black
+  }
+  { ColorButton10 ColorButton
+    MoveScaled(23,30,3,3)
+    Value = Color.Black
+  }
+  { ColorButton11 ColorButton
+    MoveScaled(23,45,3,3)
+    Value = Color.Black
+  }
+  { ColorButton12 ColorButton
+    MoveScaled(23,51,3,3)
+    Value = Color.Black
+  }
+  { ValueBox8 ValueBox
+    MoveScaled(23,12,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox10 ValueBox
+    MoveScaled(23,15,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox12 ValueBox
+    MoveScaled(23,18,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox16 ValueBox
+    MoveScaled(23,24,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox18 ValueBox
+    MoveScaled(23,27,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox22 ValueBox
+    MoveScaled(23,33,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox24 ValueBox
+    MoveScaled(23,36,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox26 ValueBox
+    MoveScaled(23,39,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox28 ValueBox
+    MoveScaled(23,42,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox32 ValueBox
+    MoveScaled(23,48,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox36 ValueBox
+    MoveScaled(23,54,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox38 ValueBox
+    MoveScaled(23,57,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { ValueBox40 ValueBox
+    MoveScaled(23,60,3,3)
+    Font = Font["Bold"]
+    Background = Color.Green
+    Foreground = Color.White
+    Text = ("1")
+    Alignment = Align.Center
+  }
+  { Timer1 #Timer
+    #MoveScaled(33,59)
+    Enabled = True
+    Delay = 5000
+  }
+  { LblPin1 Label
+    MoveScaled(17.5556,3,2,3)
+    Text = ("1")
+    Alignment = Align.Right
+  }
+  { LblMode3 Label
+    MoveScaled(15,6,3,2)
+    Text = ("-->")
+  }
+  { LblMode5 Label
+    MoveScaled(15,9,3,2)
+    Text = ("-->")
+  }
+  { LblMode7 Label
+    MoveScaled(15,12,3,2)
+    Text = ("-->")
+  }
+  { LblMode11 Label
+    MoveScaled(15,18,3,2)
+    Text = ("-->")
+  }
+  { LblMode13 Label
+    MoveScaled(15,21,3,2)
+    Text = ("-->")
+  }
+  { LblMode15 Label
+    MoveScaled(15,24,3,2)
+    Text = ("-->")
+  }
+  { LblMode19 Label
+    MoveScaled(15,30,3,2)
+    Text = ("-->")
+  }
+  { LblMode23 Label
+    MoveScaled(15,36,3,2)
+    Text = ("-->")
+  }
+  { LblMode27 Label
+    MoveScaled(15,42,3,2)
+    Text = ("-->")
+  }
+  { LblMode29 Label
+    MoveScaled(15,45,3,2)
+    Text = ("-->")
+  }
+  { LblMode31 Label
+    MoveScaled(15,48,3,2)
+    Text = ("-->")
+  }
+  { LblMode33 Label
+    MoveScaled(15,51,3,2)
+    Text = ("-->")
+  }
+  { LblMode35 Label
+    MoveScaled(15,54,3,2)
+    Text = ("-->")
+  }
+  { LblMode37 Label
+    MoveScaled(15,57,3,2)
+    Text = ("-->")
+  }
+  { LblMode8 Label
+    MoveScaled(29.5556,12,3,2)
+    Text = ("<--")
+  }
+  { LblMode10 Label
+    MoveScaled(29.5556,15,3,2)
+    Text = ("-->")
+  }
+  { LblMode12 Label
+    MoveScaled(29.5556,18,3,2)
+    Text = ("-->")
+  }
+  { LblMode16 Label
+    MoveScaled(29.5556,24,3,2)
+    Text = ("-->")
+  }
+  { LblMode18 Label
+    MoveScaled(29.5556,27,3,2)
+    Text = ("-->")
+  }
+  { LblMode22 Label
+    MoveScaled(29.5556,33,3,2)
+    Text = ("-->")
+  }
+  { LblMode24 Label
+    MoveScaled(29.5556,36,3,2)
+    Text = ("-->")
+  }
+  { LblMode26 Label
+    MoveScaled(29.5556,39,3,2)
+    Text = ("-->")
+  }
+  { LblMode28 Label
+    MoveScaled(29.5556,42,3,2)
+    Text = ("-->")
+  }
+  { LblMode32 Label
+    MoveScaled(29.5556,48,3,2)
+    Text = ("-->")
+  }
+  { LblMode36 Label
+    MoveScaled(29.5556,54,3,2)
+    Text = ("-->")
+  }
+  { LblMode38 Label
+    MoveScaled(29.5556,57,3,2)
+    Text = ("-->")
+  }
+  { LblMode40 Label
+    MoveScaled(29.5556,60,3,2)
+    Text = ("-->")
+  }
+  { LblMode21 Label
+    MoveScaled(15,33,3,2)
+    Text = ("-->")
+  }
+  { Label3 Label
+    MoveScaled(1,47,8,4)
+    Text = ("Légendes")
+  }
+  { Label4 Label
+    MoveScaled(1,51,9,7)
+    Text = ("ALTx <->\nIN     -->\nOUT")
+  }
+  { Label5 Label
+    MoveScaled(5,55,3,3)
+    Foreground = Color.Red
+    Text = ("<--")
+  }
+  { LblPin3 Label
+    MoveScaled(17.5556,6,2,3)
+    Text = ("3")
+    Alignment = Align.Right
+  }
+  { LblPin5 Label
+    MoveScaled(17.5556,9,2,3)
+    Text = ("5")
+    Alignment = Align.Right
+  }
+  { LblPin2 Label
+    MoveScaled(26.6667,3,2,3)
+    Text = ("2")
+    Alignment = Align.Left
+  }
+  { LblPin4 Label
+    MoveScaled(26.6667,6,2,3)
+    Text = ("4")
+    Alignment = Align.Left
+  }
+  { LblPin6 Label
+    MoveScaled(26.6667,9,2,3)
+    Text = ("6")
+    Alignment = Align.Left
+  }
+  { LblPin7 Label
+    MoveScaled(17.5556,12,2,3)
+    Text = ("7")
+    Alignment = Align.Right
+  }
+  { LblPin8 Label
+    MoveScaled(26.6667,12,2,3)
+    Text = ("8")
+    Alignment = Align.Left
+  }
+  { CmdPin Button
+    MoveScaled(1,5,9,4)
+    Text = ("Pin")
+  }
+  { CmdBcm Button
+    MoveScaled(1,10,9,4)
+    Text = ("BCM")
+  }
+  { CmdwPi Button
+    MoveScaled(1,15,9,4)
+    Text = ("Wpi")
+  }
+  { LblPin9 Label
+    MoveScaled(17.5556,15,2,3)
+    Text = ("9")
+    Alignment = Align.Right
+  }
+  { LblPin10 Label
+    MoveScaled(26.6667,15,2,3)
+    Text = ("10")
+    Alignment = Align.Left
+  }
+  { LblPin11 Label
+    MoveScaled(17.5556,18,2,3)
+    Text = ("11")
+    Alignment = Align.Right
+  }
+  { LblPin12 Label
+    MoveScaled(26.6667,18,2,3)
+    Text = ("12")
+    Alignment = Align.Left
+  }
+  { LblPin13 Label
+    MoveScaled(17.5556,21,2,3)
+    Text = ("13")
+    Alignment = Align.Right
+  }
+  { LblPin14 Label
+    MoveScaled(26.6667,21,2,3)
+    Text = ("14")
+    Alignment = Align.Left
+  }
+  { LblPin15 Label
+    MoveScaled(17.5556,24,2,3)
+    Text = ("15")
+    Alignment = Align.Right
+  }
+  { LblPin16 Label
+    MoveScaled(26.6667,24,2,3)
+    Text = ("16")
+    Alignment = Align.Left
+  }
+  { LblPin17 Label
+    MoveScaled(17.5556,27,2,3)
+    Text = ("17")
+    Alignment = Align.Right
+  }
+  { LblPin18 Label
+    MoveScaled(26.6667,27,2,3)
+    Text = ("18")
+    Alignment = Align.Left
+  }
+  { LblPin19 Label
+    MoveScaled(17.5556,30,2,3)
+    Text = ("19")
+    Alignment = Align.Right
+  }
+  { LblPin20 Label
+    MoveScaled(26.6667,30,2,3)
+    Text = ("20")
+    Alignment = Align.Left
+  }
+  { LblPin21 Label
+    MoveScaled(17.5556,33,2,3)
+    Text = ("21")
+    Alignment = Align.Right
+  }
+  { LblPin22 Label
+    MoveScaled(26.6667,33,2,3)
+    Text = ("22")
+    Alignment = Align.Left
+  }
+  { LblPin23 Label
+    MoveScaled(17.5556,36,2,3)
+    Text = ("23")
+    Alignment = Align.Right
+  }
+  { LblPin24 Label
+    MoveScaled(26.6667,36,2,3)
+    Text = ("24")
+    Alignment = Align.Left
+  }
+  { LblPin25 Label
+    MoveScaled(17.5556,39,2,3)
+    Text = ("25")
+    Alignment = Align.Right
+  }
+  { LblPin26 Label
+    MoveScaled(26.6667,39,2,3)
+    Text = ("26")
+    Alignment = Align.Left
+  }
+  { LblPin27 Label
+    MoveScaled(17.5556,42,2,3)
+    Text = ("27")
+    Alignment = Align.Right
+  }
+  { LblPin28 Label
+    MoveScaled(26.6667,42,2,3)
+    Text = ("28")
+    Alignment = Align.Left
+  }
+  { LblPin29 Label
+    MoveScaled(17.5556,45,2,3)
+    Text = ("29")
+    Alignment = Align.Right
+  }
+  { LblPin30 Label
+    MoveScaled(26.6667,45,2,3)
+    Text = ("30")
+    Alignment = Align.Left
+  }
+  { LblPin31 Label
+    MoveScaled(17.5556,48,2,3)
+    Text = ("31")
+    Alignment = Align.Right
+  }
+  { LblPin32 Label
+    MoveScaled(26.6667,48,2,3)
+    Text = ("32")
+    Alignment = Align.Left
+  }
+  { LblPin33 Label
+    MoveScaled(17.5556,51,2,3)
+    Text = ("33")
+    Alignment = Align.Right
+  }
+  { LblPin34 Label
+    MoveScaled(26.6667,51,2,3)
+    Text = ("34")
+    Alignment = Align.Left
+  }
+  { LblPin35 Label
+    MoveScaled(17.5556,54,2,3)
+    Text = ("35")
+    Alignment = Align.Right
+  }
+  { LblPin36 Label
+    MoveScaled(26.6667,54,2,3)
+    Text = ("36")
+    Alignment = Align.Left
+  }
+  { LblPin37 Label
+    MoveScaled(17.5556,57,2,3)
+    Text = ("37")
+    Alignment = Align.Right
+  }
+  { LblPin38 Label
+    MoveScaled(26.6667,57,2,3)
+    Text = ("38")
+    Alignment = Align.Left
+  }
+  { LblPin39 Label
+    MoveScaled(17.5556,60,2,3)
+    Text = ("39")
+    Alignment = Align.Right
+  }
+  { LblPin40 Label
+    MoveScaled(26.6667,60,2,3)
+    Text = ("40")
+    Alignment = Align.Left
+  }
+  { CmdClose Button
+    MoveScaled(33,62,14,4)
+    Text = ("Quitter")
+  }
+  { Slider1 Slider
+    MoveScaled(38,7,6,15)
+    MinValue = 2
+    MaxValue = 15
+    PageStep = 1
+    Mark = True
+    Value = 5
+  }
+  { Label1 Label
+    MoveScaled(38,3,6,4)
+    Text = ("Tempo")
+  }
+  { LblPin41 Label
+    MoveScaled(45,6,2,3)
+    Text = ("2s")
+    Alignment = Align.Right
+  }
+  { LblPin42 Label
+    MoveScaled(44,20,3,3)
+    Text = ("15s")
+    Alignment = Align.Left
+  }
+  { ColorTempo ColorButton
+    MoveScaled(44,3,3,3)
+    Value = Color.White
+  }
+  { Timer2 #Timer
+    #MoveScaled(41,54)
+  }
+}
