@@ -184,7 +184,7 @@ Public Sub LireGpio()
  
    'pin 3
    ValueBox3.Text = digitalRead(8)
-   Shell "/home/pi/statusgpiomode.sh 2" To result
+   Shell "./statusgpiomode.sh 2" To result
    LblMode3.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode3.Text = "-->"
@@ -201,7 +201,7 @@ Public Sub LireGpio()
    Endif
    'pin 5
    ValueBox5.Text = digitalRead(9)
-   Shell "/home/pi/statusgpiomode.sh 3" To result
+   Shell "./statusgpiomode.sh 3" To result
    LblMode5.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode5.text = "-->"
@@ -218,7 +218,7 @@ Public Sub LireGpio()
    Endif 
    'pin 7
    ValueBox7.Text = digitalRead(7)
-      Shell "/home/pi/statusgpiomode.sh 4" To result   
+      Shell "./statusgpiomode.sh 4" To result   
    LblMode7.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode7.Text = "-->"
@@ -234,7 +234,7 @@ Public Sub LireGpio()
        ValueBox7.Background = Color.Green
    Endif 
    'pin 8
-   Shell "/home/pi/statusgpiomode.sh 14" To result   
+   Shell "./statusgpiomode.sh 14" To result   
    LblMode8.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode8.Text = "<--"
@@ -252,7 +252,7 @@ Public Sub LireGpio()
        ValueBox8.Background = Color.Green
    Endif 
    'pin 10 
-   Shell "/home/pi/statusgpiomode.sh 15" To result
+   Shell "./statusgpiomode.sh 15" To result
       LblMode10.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode10.Text = "<--"
@@ -271,7 +271,7 @@ Public Sub LireGpio()
    Endif 
    'pin 11
    ValueBox11.Text = digitalRead(0)
-      Shell "/home/pi/statusgpiomode.sh 17" To result
+      Shell "./statusgpiomode.sh 17" To result
    LblMode11.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode11.Text = "-->"
@@ -287,7 +287,7 @@ Public Sub LireGpio()
        ValueBox11.Background = Color.Green
    Endif 
    'pin 12
-   Shell "/home/pi/statusgpiomode.sh 18" To result   
+   Shell "./statusgpiomode.sh 18" To result   
    LblMode12.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode12.Text = "<--"
@@ -306,7 +306,7 @@ Public Sub LireGpio()
    Endif 
    'pin 13
    ValueBox13.Text = digitalRead(2)
-      Shell "/home/pi/statusgpiomode.sh 27" To result
+      Shell "./statusgpiomode.sh 27" To result
    LblMode13.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode13.Text = "-->"
@@ -323,7 +323,7 @@ Public Sub LireGpio()
    Endif 
    'pin 15
    ValueBox15.Text = digitalRead(3)
-   Shell "/home/pi/statusgpiomode.sh 22" To result
+   Shell "./statusgpiomode.sh 22" To result
    LblMode15.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode15.Text = "-->"
@@ -339,7 +339,7 @@ Public Sub LireGpio()
        ValueBox15.Background = Color.Green
    Endif 
    ' pin 16
-   Shell "/home/pi/statusgpiomode.sh 23" To result   
+   Shell "./statusgpiomode.sh 23" To result   
    LblMode16.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode16.Text = "<--"
@@ -357,7 +357,7 @@ Public Sub LireGpio()
        ValueBox16.Background = Color.Green
    Endif 
    ' pin 18
-   Shell "/home/pi/statusgpiomode.sh 24" To result   
+   Shell "./statusgpiomode.sh 24" To result   
    LblMode18.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode18.Text = "<--"
@@ -376,7 +376,7 @@ Public Sub LireGpio()
    Endif 
    'pin 19
    ValueBox19.Text = digitalRead(12)
-      Shell "/home/pi/statusgpiomode.sh 10" To result
+      Shell "./statusgpiomode.sh 10" To result
    LblMode19.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode19.Text = "-->"
@@ -394,7 +394,7 @@ Public Sub LireGpio()
    'pin 21
    ValueBox21.Text = digitalRead(13)
    
-   Shell "/home/pi/statusgpiomode.sh 9" To result
+   Shell "./statusgpiomode.sh 9" To result
    LblMode21.Foreground = Color.Black
    If result = "IN\n" Then
       LblMode21.text = "-->"
@@ -410,7 +410,7 @@ Public Sub LireGpio()
        ValueBox21.Background = Color.Green
    Endif 
    'pin 22
-   Shell "/home/pi/statusgpiomode.sh 25" To result
+   Shell "./statusgpiomode.sh 25" To result
    LblMode22.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode22.Text = "<--"
@@ -429,7 +429,7 @@ Public Sub LireGpio()
    Endif 
    'pin 23
    ValueBox23.Text = digitalRead(14)
-      Shell "/home/pi/statusgpiomode.sh 11" To result
+      Shell "./statusgpiomode.sh 11" To result
    LblMode23.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode23.Text = "-->"
@@ -445,7 +445,7 @@ Public Sub LireGpio()
        ValueBox23.Background = Color.Green
    Endif 
    'pin 24
-   Shell "/home/pi/statusgpiomode.sh 8" To result   
+   Shell "./statusgpiomode.sh 8" To result   
    LblMode24.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode24.Text = "<--"
@@ -463,7 +463,7 @@ Public Sub LireGpio()
        ValueBox24.Background = Color.Green
    Endif 
    ' pin 26
-   Shell "/home/pi/statusgpiomode.sh 7" To result   
+   Shell "./statusgpiomode.sh 7" To result   
    LblMode26.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode26.Text = "<--"
@@ -482,7 +482,7 @@ Public Sub LireGpio()
    Endif 
    'pin 27
    ValueBox27.Text = digitalRead(30)
-      Shell "/home/pi/statusgpiomode.sh 0" To result
+      Shell "./statusgpiomode.sh 0" To result
    LblMode27.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode27.Text = "-->"
@@ -498,7 +498,7 @@ Public Sub LireGpio()
        ValueBox27.Background = Color.Green
    Endif 
    ' pin 28
-   Shell "/home/pi/statusgpiomode.sh 1" To result   
+   Shell "./statusgpiomode.sh 1" To result   
    LblMode28.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode28.Text = "<--"
@@ -517,7 +517,7 @@ Public Sub LireGpio()
    Endif
    ' pin 29 
    ValueBox29.Text = digitalRead(21)
-      Shell "/home/pi/statusgpiomode.sh 5" To result
+      Shell "./statusgpiomode.sh 5" To result
    LblMode29.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode29.Text = "-->"
@@ -534,7 +534,7 @@ Public Sub LireGpio()
    Endif 
    ' pin 31
    ValueBox31.Text = digitalRead(22)
-      Shell "/home/pi/statusgpiomode.sh 6" To result
+      Shell "./statusgpiomode.sh 6" To result
    LblMode31.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode31.Text = "-->"
@@ -550,7 +550,7 @@ Public Sub LireGpio()
        ValueBox31.Background = Color.Green
    Endif 
    ' pin 32
-   Shell "/home/pi/statusgpiomode.sh 12" To result   
+   Shell "./statusgpiomode.sh 12" To result   
    LblMode32.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode32.Text = "<--"
@@ -569,7 +569,7 @@ Public Sub LireGpio()
    Endif 
    ' pin 33
    ValueBox33.Text = digitalRead(23)
-      Shell "/home/pi/statusgpiomode.sh 13" To result
+      Shell "./statusgpiomode.sh 13" To result
    LblMode33.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode33.Text = "-->"
@@ -586,7 +586,7 @@ Public Sub LireGpio()
    Endif 
    ' pin 35
    ValueBox35.Text = digitalRead(24)
-      Shell "/home/pi/statusgpiomode.sh 19" To result
+      Shell "./statusgpiomode.sh 19" To result
    LblMode35.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode35.Text = "-->"
@@ -602,7 +602,7 @@ Public Sub LireGpio()
        ValueBox35.Background = Color.Green
    Endif 
    ' pin 36
-   Shell "/home/pi/statusgpiomode.sh 16" To result   
+   Shell "./statusgpiomode.sh 16" To result   
    LblMode36.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode36.Text = "<--"
@@ -621,7 +621,7 @@ Public Sub LireGpio()
    Endif 
    ' pin 37
    ValueBox37.Text = digitalRead(25)
-      Shell "/home/pi/statusgpiomode.sh 26" To result
+      Shell "./statusgpiomode.sh 26" To result
    LblMode37.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode37.Text = "-->"
@@ -637,7 +637,7 @@ Public Sub LireGpio()
        ValueBox37.Background = Color.Green
    Endif 
    ' pin 38
-   Shell "/home/pi/statusgpiomode.sh 20" To result   
+   Shell "./statusgpiomode.sh 20" To result   
    LblMode38.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode38.Text = "<--"
@@ -655,7 +655,7 @@ Public Sub LireGpio()
        ValueBox38.Background = Color.Green
    Endif 
    ' pin 40
-   Shell "/home/pi/statusgpiomode.sh 21" To result   
+   Shell "./statusgpiomode.sh 21" To result   
    LblMode40.Foreground = Color.Black
    If result = "IN\n" Then
      LblMode40.Text = "<--"
