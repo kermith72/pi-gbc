@@ -62,7 +62,7 @@ case "$2" in
                                  case "$3" in
                                          fan)
                                            #fan off
-                                           /home/pi/Documents/pi-gbc/python/commandmotor.py fan start 1
+                                           /home/pi/Documents/pi-gbc/python/commandmotor.py fan stop 1
                                         ;;
                                  esac
                                 ;;
