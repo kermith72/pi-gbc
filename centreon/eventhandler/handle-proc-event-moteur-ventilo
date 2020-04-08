@@ -1,0 +1,72 @@
+#!/bin/bash
+#===============================================================================
+# Centreon Plugin Bash Script - handle-proc-event-moteur-ventilo
+# Auteur : kermith72
+# Date   : 08/04/2020
+# But    : script to control motors and fan
+#===============================================================================
+# Taken into account if the state is hard
+case "$2" in
+        HARD)
+                case "$1" in
+                        CRITICAL)
+                                case "$3" in
+                                        motor1)
+                                          #sequence moteur1 off moteur7 on
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor stop 1
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor start 2
+                                        ;;
+                                        motor2)
+                                          #sequence moteur2 off moteur3 on
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor stop 2
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor start 3
+                                        ;;
+                                        motor3)
+                                          #sequence moteur3 off moteur4 on
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor stop 3
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor start 4
+                                        ;;
+                                        motor4)
+                                          #sequence moteur4 off moteur5 on
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor stop 4
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor start 5
+                                        ;;
+                                        motor5)
+                                          #sequence moteur5 off moteur6 on
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor stop 5
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor start 6
+                                        ;;
+                                        motor6)
+                                          #sequence moteur6 off moteur7 on
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor stop 6
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor start 7
+                                        ;;
+                                        motor7)
+                                          #sequence moteur7 off moteur1 on
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor stop 7
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py motor start 1
+                                        ;;
+                                 esac
+                                ;;
+                        WARNING)
+                                 case "$3" in
+                                        fan)
+                                          #fan on
+                                          /home/pi/Documents/pi-gbc/python/commandmotor.py fan start 1
+                                        ;;
+                                 esac
+                                ;;
+                        UNKNOWN)
+                                ;;
+                        OK)
+                                 case "$3" in
+                                         fan)
+                                           #fan off
+                                           /home/pi/Documents/pi-gbc/python/commandmotor.py fan start 1
+                                        ;;
+                                 esac
+                                ;;
+                esac
+                ;;
+        esac
+exit 0
