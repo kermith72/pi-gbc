@@ -23,15 +23,11 @@ ISR(PCINT2_vect) // handle pin change interrupt for D0 to D7 here
    opto2=opto2+1;
   } 
  
-  lcd.setCursor(0,1);
-  String chaine = "1: " + String(opto1) + " 2: " + String(opto2);
-  lcd.print(chaine);
-}  
+
+} 
 
 void setup()   
 {
-  
-  Serial.begin(9600); 
   lcd.begin(16, 2);
   pciSetup(7);
   pciSetup(2);
@@ -43,5 +39,8 @@ void setup()
 
 void loop()
 { 
-  
+  lcd.setCursor(0,1);
+  String chaine = "1: " + String(opto1) + " 2: " + String(opto2);
+  lcd.print(chaine);
+  delay(100);
 }
