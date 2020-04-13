@@ -27,24 +27,24 @@ void pciSetup(byte pin)
 
 ISR(PCINT2_vect) // handle pin change interrupt for D2 to D7 here
 {
-  /*if (digitalRead(2) == LOW){
+  if (digitalRead(2) == LOW){
    opto1=opto1+1;
-  }*/
+  }
   if (digitalRead(3) == LOW){
    opto2=opto2+1;
   } 
-  /*if (digitalRead(4) == LOW){
+  if (digitalRead(4) == LOW){
    opto3=opto3+1;
-  } */
+  } 
   if (digitalRead(5) == LOW){
    opto4=opto4+1;
   } 
-  /* if (digitalRead(6) == LOW){
+  if (digitalRead(6) == LOW){
    opto6=opto5+1;
   } 
   if (digitalRead(7) == LOW){
    opto6=opto6+1;
-  } */
+  } 
  
 } 
 
@@ -62,17 +62,14 @@ void setup()
   
   lcd.begin(16, 2);
   lcd.setRGB(colorR, colorG, colorB);
-  //pciSetup(2);
+  pciSetup(2);
   pciSetup(3);
-  //pciSetup(4);
+  pciSetup(4);
   pciSetup(5);
-  //pciSetup(6);
-  //pciSetup(7);
+  pciSetup(6);
+  pciSetup(7);
   pciSetup(A0);
   lcd.print("2 3 4 5 6 7 A");
-  //lcd.setCursor(0,1);
-  //String chaine = "1: " + String(opto1) + " 2: " + String(opto2);
-  //lcd.print(chaine);
  }
 
 void loop()
