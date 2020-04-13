@@ -1,0 +1,65 @@
+' Gambas class file
+
+Library "/usr/lib/libwiringPi"
+
+Public Extern wiringPiSetup() As Integer
+
+Public Extern pinMode(pin As Integer, pud As Integer)
+
+Public Extern pullUpDnControl(pin As Integer, mode As Integer)
+
+Public Extern digitalRead(pin As Integer) As Integer
+
+Public Extern digitalWrite(pin As Integer, value As Integer)
+
+Const PI_INPUT As Integer = 0
+Const PI_OUTPUT As Integer = 1
+
+
+Public Sub CmdClose_Click()
+
+  Quit
+
+End
+
+Public Sub Form_Open()
+
+  
+      wiringPiSetup()
+      
+Catch
+     Me.text = "WiringPi setup failed - run as root?"
+
+End
+
+Public Sub cmdStart_Click()
+
+  digitalWrite(11, 1)
+  digitalWrite(31, 0)
+
+
+End
+
+Public Sub CmdStop_Click()
+
+  digitalWrite(11, 0)
+  digitalWrite(31, 0)
+
+
+End
+
+Public Sub cmdStart2_Click()
+
+  digitalWrite(26, 1)
+  digitalWrite(27, 0)
+
+
+End
+
+Public Sub CmdStop2_Click()
+
+ digitalWrite(26, 0)
+  digitalWrite(27, 0)
+ 
+
+End

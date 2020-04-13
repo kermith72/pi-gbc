@@ -1,0 +1,33 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,65,56)
+  { CmdClose Button
+    MoveScaled(49,50,14,4)
+    Text = ("Quitter")
+  }
+  { cmdStart Button
+    MoveScaled(24,12,16,4)
+    Text = ("Start")
+  }
+  { CmdStop Button
+    MoveScaled(24,17,16,4)
+    Text = ("Stop")
+  }
+  { TextLabel1 TextLabel
+    MoveScaled(24,7,16,4)
+    Text = ("Moteur 7")
+  }
+  { cmdStart2 Button
+    MoveScaled(7,12,16,4)
+    Text = ("Start")
+  }
+  { CmdStop2 Button
+    MoveScaled(7,17,16,4)
+    Text = ("Stop")
+  }
+  { TextLabel2 TextLabel
+    MoveScaled(7,7,16,4)
+    Text = ("Moteur 6")
+  }
+}
