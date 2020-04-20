@@ -14,52 +14,156 @@ Public Extern digitalWrite(pin As Integer, value As Integer)
 
 Const PI_INPUT As Integer = 0
 Const PI_OUTPUT As Integer = 1
-
+Public Const PIN_LOW As Integer = 0
+Public Const PIN_HIGH As Integer = 1
 
 Public Sub CmdClose_Click()
-
   Quit
-
 End
 
 Public Sub Form_Open()
-
-  
       wiringPiSetup()
-      
+      GpioSetup()
 Catch
      Me.text = "WiringPi setup failed - run as root?"
-
+End
+Public Sub GpioSetup()
+  pinMode(0, PI_OUTPUT) 'motor 2
+  pinMode(2, PI_OUTPUT) 'motor 2 
+  pinMode(3, PI_OUTPUT) 'motor 1
+  pinMode(11, PI_OUTPUT) 'motor 7
+  pinMode(12, PI_OUTPUT) 'motor 1
+  pinMode(13, PI_OUTPUT) 'fan
+  pinMode(14, PI_OUTPUT) 'fan
+  pinMode(21, PI_OUTPUT) 'motor 3
+  pinMode(22, PI_OUTPUT) 'motor 3
+  pinMode(23, PI_OUTPUT) 'motor 4
+  pinMode(24, PI_OUTPUT) 'motor 4
+  pinMode(26, PI_OUTPUT) 'motor 6
+  pinMode(27, PI_OUTPUT) 'motor 6
+  pinMode(28, PI_OUTPUT) 'motor 5
+  pinMode(29, PI_OUTPUT) 'motor 5
+  pinMode(31, PI_OUTPUT) 'motor 7
 End
 
-Public Sub cmdStart_Click()
 
-  digitalWrite(11, 1)
-  digitalWrite(31, 0)
-
-
+Public Sub cmdStart1_Click()
+ If CmdReverse1.Value = False Then
+    digitalWrite(12, PIN_LOW)
+    digitalWrite(3, PIN_HIGH)
+  Else
+    digitalWrite(12, PIN_HIGH)
+    digitalWrite(3, PIN_LOW)
+  Endif
+  ColorButton6.color = Color.Green
 End
 
-Public Sub CmdStop_Click()
+Public Sub CmdStop1_Click()
+  digitalWrite(3, PIN_LOW)
+  digitalWrite(12, PIN_LOW)
+  ColorButton6.color = Color.Red
+End
 
-  digitalWrite(11, 0)
-  digitalWrite(31, 0)
 
+Public Sub cmdStart6_Click()
+ If CmdReverse6.Value = False Then
+    digitalWrite(26, PIN_LOW)
+    digitalWrite(27, PIN_HIGH)
+  Else
+    digitalWrite(26, PIN_HIGH)
+    digitalWrite(27, PIN_LOW)
+  Endif
+  ColorButton6.color = Color.Green
+End
 
+Public Sub CmdStop6_Click()
+  digitalWrite(27, PIN_LOW)
+  digitalWrite(26, PIN_LOW)
+  ColorButton6.color = Color.Red
+End
+
+Public Sub cmdStart7_Click()
+  If CmdReverse7.Value = False Then
+    digitalWrite(31, PIN_LOW)
+    digitalWrite(11, PIN_HIGH)
+  Else
+    digitalWrite(31, PIN_HIGH)
+    digitalWrite(11, PIN_LOW)
+  Endif
+
+  ColorButton7.color = Color.Green
+End
+
+Public Sub CmdStop7_Click()
+  digitalWrite(11, PIN_LOW)
+  digitalWrite(31, PIN_LOW)
+  ColorButton7.color = Color.Red
+End
+
+Public Sub cmdStart5_Click()
+  If CmdReverse5.Value = False Then
+    digitalWrite(28, PIN_LOW)
+    digitalWrite(29, PIN_HIGH)
+  Else
+    digitalWrite(28, PIN_HIGH)
+    digitalWrite(29, PIN_LOW)
+  Endif
+  ColorButton5.color = Color.Green
+End
+
+Public Sub CmdStop5_Click()
+  digitalWrite(28, PIN_LOW)
+  digitalWrite(29, PIN_LOW)
+  ColorButton5.color = Color.red
+End
+
+Public Sub cmdStart4_Click()
+ If CmdReverse4.Value = False Then
+    digitalWrite(23, PIN_LOW)
+    digitalWrite(24, PIN_HIGH)
+  Else
+    digitalWrite(23, PIN_HIGH)
+    digitalWrite(24, PIN_LOW)
+  Endif
+  ColorButton4.color = Color.Green
 End
 
 Public Sub cmdStart2_Click()
-
-  digitalWrite(26, 1)
-  digitalWrite(27, 0)
-
-
+  If CmdReverse2.Value = False Then
+    digitalWrite(0, PIN_LOW)
+    digitalWrite(2, PIN_HIGH)
+  Else
+    digitalWrite(0, PIN_HIGH)
+    digitalWrite(2, PIN_LOW)
+  Endif
+  ColorButton2.color = Color.Green
 End
 
 Public Sub CmdStop2_Click()
+  digitalWrite(0, PIN_LOW)
+  digitalWrite(2, PIN_LOW)
+  ColorButton2.color = Color.red
+End
 
- digitalWrite(26, 0)
-  digitalWrite(27, 0)
- 
+Public Sub cmdStart3_Click()
+  If CmdReverse3.Value = False Then
+    digitalWrite(21, PIN_LOW)
+    digitalWrite(22, PIN_HIGH)
+  Else
+    digitalWrite(21, PIN_HIGH)
+    digitalWrite(22, PIN_LOW)
+  Endif
+  ColorButton3.color = Color.Green
+End
 
+Public Sub CmdStop3_Click()
+  digitalWrite(21, PIN_LOW)
+  digitalWrite(22, PIN_LOW)
+  ColorButton3.color = Color.red
+End
+
+Public Sub CmdStop4_Click()
+  digitalWrite(23, PIN_LOW)
+  digitalWrite(24, PIN_LOW)
+  ColorButton4.color = Color.red
 End

@@ -7,4 +7,6 @@ Command Motor
 gb.image
 gb.gui
 gb.form
+gb.settings
+gb.net
 
